@@ -126,7 +126,6 @@ def test_calendar_walker_is_utc_compatibility_hook():
 
 def test_duplicate_matching_x_wr_timezone_values_are_used(calendars):
     calendar = calendars["duplicate-matching-x-wr-timezone-values.in.ics"].as_icalendar()
-
     output_bytes = x_wr_timezone.to_standard(calendar).to_ical()
 
     assert_has_line(
@@ -138,7 +137,6 @@ def test_duplicate_matching_x_wr_timezone_values_are_used(calendars):
 
 def test_duplicate_conflicting_x_wr_timezone_values_are_ignored(calendars):
     calendar = calendars["duplicate-conflicting-x-wr-timezone-values.in.ics"].as_icalendar()
-
     output_bytes = x_wr_timezone.to_standard(calendar).to_ical()
 
     assert_has_line(
